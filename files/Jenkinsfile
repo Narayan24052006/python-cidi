@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sh '''
                 . venv/bin/activate
-                flake8 app.py test_app.py
+                flake8 app.py test.py
                 '''
             }
         }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 sh '''
                 . venv/bin/activate
-                pytest test_app.py --junitxml=test-results.xml
+                pytest test.py --junitxml=test-results.xml
                 '''
             }
         }
